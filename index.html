@@ -20,19 +20,103 @@
       line-height: 1.6;
       color: var(--text-dark);
     }
-    
+        
     header {
       background-color: var(--secondary);
       color: var(--primary);
-      padding: 30px 20px;
+      padding: 120px 20px;
       text-align: center;
       position: relative;
+    }
+
+    .navbar {
+      background-color: var(--secondary);
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      left: 0;
+      right: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar.fixed {
+      position: fixed;
+      top: 0;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .nav-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      background-color: rgba(0, 68, 255, 0.1);
+    }
+
+    .language-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .language-btn {
+      background: var(--primary);
+      color: var(--text-light);
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+    
+    .language-btn:hover {
+      background: #0033cc;
+      transform: translateY(-2px);
+    }
+
+    .language-btn.active {
+      background: #0033cc;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
     
     h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
       letter-spacing: -1px;
     }
     
@@ -51,25 +135,6 @@
       width: 50%;
       height: 3px;
       background: var(--secondary);
-    }
-    
-    .translate-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: var(--primary);
-      color: var(--text-light);
-      border: none;
-      padding: 8px 15px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-    
-    .translate-btn:hover {
-      background: #0033cc;
-      transform: translateY(-2px);
     }
     
     .contact-info {
@@ -135,7 +200,66 @@
       color: var(--primary);
     }
     
-    /* Seção de Testemunhos Atualizada */
+    /* New Development Section Styles */
+    .development {
+      padding: 80px 20px;
+      background-color: var(--bg-light);
+      text-align: center;
+    }
+    
+    .development-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 50px 0;
+    }
+    
+    .process-step {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      border-left: 4px solid var(--primary);
+    }
+    
+    .process-step:hover {
+      transform: translateY(-5px);
+    }
+    
+    .ink-scroll-effect {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+      margin: 60px 0;
+      background-color: rgba(0, 68, 255, 0.05);
+      border-radius: 10px;
+    }
+    
+    .floating-ink {
+      position: absolute;
+      width: 120%;
+      max-width: none;
+      left: -10%;
+      transition: transform 0.5s ease-out;
+      opacity: 0.9;
+      mix-blend-mode: multiply;
+    }
+    
+    .why-choose {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 40px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-top: 4px solid var(--secondary);
+    }
+    
     .testimonials {
       position: relative;
       height: 400px;
@@ -172,7 +296,7 @@
     }
     
     .testimonial-content {
-      background: rgba(30, 30, 30, 0.95);
+      background: rgba(40, 40, 40, 0.8);
       padding: 30px;
       max-width: 700px;
       border-radius: 10px;
@@ -180,12 +304,14 @@
       text-align: center;
       box-shadow: 0 5px 20px rgba(0,0,0,0.4);
       color: #F5F5DC;
+      position: relative;
     }
     
     .testimonial-content p {
       font-weight: bold;
       font-size: 18px;
       line-height: 1.6;
+      font-style: italic;
     }
     
     .testimonial-content strong {
@@ -193,6 +319,7 @@
       font-weight: bold;
       display: inline-block;
       margin-top: 15px;
+      font-style: normal;
     }
     
     .testimonial-background {
@@ -200,8 +327,38 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.4);
+      filter: brightness(0.4) blur(3px);
       z-index: 1;
+    }
+
+    .testimonial-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      z-index: 3;
+      transform: translateY(-50%);
+    }
+
+    .testimonial-arrow {
+      background: rgba(255,255,255,0.3);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 20px;
+    }
+
+    .testimonial-arrow:hover {
+      background: rgba(255,255,255,0.5);
     }
     
     .pricing {
@@ -240,24 +397,30 @@
       background-color: #e6e6e6;
     }
 
-    /* Seção de contacto atualizada */
     .contact-section {
       padding: 50px 20px;
       background-color: var(--primary);
       color: white;
-      text-align: center;
+    }
+    
+    .contact-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
     }
 
-    .contact-container {
-      max-width: 600px;
-      margin: 0 auto;
+    .contact-text {
+      font-size: 20px;
+      line-height: 1.6;
     }
 
     .contact-options {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      margin-top: 30px;
     }
 
     .contact-btn {
@@ -271,7 +434,6 @@
       cursor: pointer;
       transition: all 0.3s ease;
       text-decoration: none;
-      display: inline-block;
       text-align: center;
     }
 
@@ -299,6 +461,7 @@
       gap: 10px;
       font-size: 18px;
       margin-top: 20px;
+      color: white;
     }
 
     .phone-contact span {
@@ -308,6 +471,7 @@
     .phone-icon {
       width: 24px;
       height: 24px;
+      fill: var(--secondary);
     }
     
     footer {
@@ -319,11 +483,24 @@
     }
     
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2rem;
+      body {
+        padding-top: 140px;
       }
       
-      .services-grid {
+      header {
+        padding: 60px 20px;
+      }
+      
+      .navbar {
+        padding: 15px 0;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .services-grid,
+      .process-steps {
         grid-template-columns: 1fr;
       }
       
@@ -335,6 +512,16 @@
         padding: 20px;
       }
 
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .contact-text {
+        font-size: 18px;
+        text-align: center;
+      }
+
       .contact-options {
         gap: 12px;
       }
@@ -343,22 +530,58 @@
         padding: 12px 20px;
         font-size: 16px;
       }
+      
+      .nav-links {
+        gap: 15px;
+      }
+      
+      .nav-links a {
+        font-size: 16px;
+        padding: 5px 10px;
+      }
+
+      .language-buttons {
+        gap: 5px;
+      }
+
+      .language-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+      }
+      
+      .ink-scroll-effect {
+        height: 200px;
+        margin: 30px 0;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1></h1>
     <h1>v.graphiks</h1>
-    <h1></h1>
-    <button class="translate-btn" onclick="toggleLanguage()">EN</button>
   </header>
+  
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#development">Desenvolvimento</a></li>
+        <li><a href="#testimonials">Depoimentos</a></li>
+        <li><a href="#pricing">Preços</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+      <div class="language-buttons">
+        <button class="language-btn active" id="pt-btn" onclick="setLanguage('pt')">PT</button>
+        <button class="language-btn" id="en-btn" onclick="setLanguage('en')">EN</button>
+      </div>
+    </div>
+  </nav>
   
   <section class="description" id="description">
     <p>Na v.graphiks, criamos soluções visuais que combinam criatividade, funcionalidade e impacto. Do branding ao motion design, os nossos clientes confiam no nosso trabalho para dar vida às suas ideias e destacar as suas marcas.</p>
   </section>
   
-  <section class="services">
+  <section class="services" id="projects">
     <h2>Nossos Serviços</h2>
     <div class="services-grid">
       <div class="service-card">
@@ -380,7 +603,54 @@
     </div>
   </section>
   
+  <!-- New Development Section -->
+  <section class="development" id="development">
+    <div class="development-container">
+      <h2>Nosso Processo de Desenvolvimento</h2>
+      
+      <p>Na <strong>v.graphiks</strong>, combinamos <strong>criatividade, tecnologia e estratégia</strong> para criar experiências visuais excepcionais. Nosso processo é projetado para ser <strong>flexível, colaborativo e eficiente</strong>, garantindo que cada projeto atenda aos mais altos padrões.</p>
+      
+      <div class="process-steps">
+        <div class="process-step">
+          <h3>1. Descoberta & Estratégia</h3>
+          <p>Começamos entendendo sua visão, objetivos e público-alvo. Através de pesquisa e análise, definimos o melhor caminho.</p>
+        </div>
+        
+        <div class="process-step">
+          <h3>2. Conceito & Design</h3>
+          <p>Nossa equipe cria <strong>conceitos inovadores</strong>, desde esboços até protótipos digitais, refinando até alinhar perfeitamente com sua marca.</p>
+        </div>
+        
+        <div class="process-step">
+          <h3>3. Execução & Refinamento</h3>
+          <p>Usando ferramentas de ponta, trazemos os designs para a vida enquanto otimizamos continuamente para impacto e usabilidade.</p>
+        </div>
+        
+        <div class="process-step">
+          <h3>4. Testes & Entrega</h3>
+          <p>Antes do lançamento, testamos rigorosamente cada elemento para garantir desempenho impecável. Então entregamos o produto final com suporte completo.</p>
+        </div>
+      </div>
+      
+      <!-- Blue Ink Animation -->
+      <div class="ink-scroll-effect">
+        <img src="https://cdn.pixabay.com/photo/2016/05/24/16/48/mountains-1412683_1280.png" alt="Efeito de Tinta Azul Dinâmica" class="floating-ink">
+      </div>
+      
+      <div class="why-choose">
+        <h3>Por Que Escolher Nosso Processo?</h3>
+        <p>✅ <strong>Ágil & Adaptável</strong> – Ajustamos ao feedback em tempo real.</p>
+        <p>✅ <strong>Ferramentas Modernas</strong> – Desde design assistido por IA até motion graphics.</p>
+        <p>✅ <strong>Colaboração Transparente</strong> – Você está envolvido em cada etapa.</p>
+      </div>
+    </div>
+  </section>
+  
   <section class="testimonials" id="testimonials">
+    <div class="testimonial-nav">
+      <button class="testimonial-arrow" onclick="prevTestimonial()">←</button>
+      <button class="testimonial-arrow" onclick="nextTestimonial()">→</button>
+    </div>
     <div class="testimonial active">
       <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg" class="testimonial-background" alt="Pessoas trabalhando em design">
       <div class="testimonial-content">
@@ -443,16 +713,21 @@
 
   <section class="contact-section" id="contact">
     <div class="contact-container">
-      <h2 style="color: var(--secondary);">Contacte-nos</h2>
-      <p>Tem um projeto em mente? Entre em contacto connosco através do email, WhatsApp ou telefone.</p>
-      
+      <div class="contact-text">
+        <h2 style="color: var(--secondary);">Contacte-nos</h2>
+        <p>Tem um projeto em mente? Entre em contacto connosco através do email, WhatsApp ou telefone. Estamos disponíveis para discutir suas necessidades e criar soluções visuais que destacarão sua marca no mercado.</p>
+        <div class="phone-contact">
+          <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M20 15.5c-1.2 0-2.5-.2-3.6-.6h-.3c-.3 0-.5.1-.7.3l-2.2 2.2c-2.8-1.5-5.2-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.4-.5-3.6 0-.5-.5-1-1-1H4c-.5 0-1 .5-1 1 0 9.4 7.6 17 17 17 .5 0 1-.5 1-1v-3.5c0-.5-.5-1-1-1z"/>
+          </svg>
+          <span>+351 933 402 201</span>
+        </div>
+      </div>
       <div class="contact-options">
-        <!-- Botão de Email atualizado -->
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=v.graphikscorp@gmail.com" 
            target="_blank" 
            class="contact-btn">Enviar Email</a>
         
-        <!-- Botão de WhatsApp -->
         <a href="https://wa.me/351933402201" 
            target="_blank" 
            class="contact-btn whatsapp-btn">
@@ -461,13 +736,6 @@
           </svg>
           WhatsApp
         </a>
-        
-        <div class="phone-contact">
-          <svg class="phone-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="var(--secondary)">
-            <path d="M20 15.5c-1.2 0-2.5-.2-3.6-.6h-.3c-.3 0-.5.1-.7.3l-2.2 2.2c-2.8-1.5-5.2-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.4-.5-3.6 0-.5-.5-1-1-1H4c-.5 0-1 .5-1 1 0 9.4 7.6 17 17 17 .5 0 1-.5 1-1v-3.5c0-.5-.5-1-1-1z"/>
-          </svg>
-          <span>+351 933 402 201</span>
-        </div>
       </div>
     </div>
   </section>
@@ -477,42 +745,81 @@
   </footer>
   
   <script>
-    // Testimonial slider with right-to-left continuous loop
+    // Testimonial slider
     const testimonials = document.querySelectorAll('.testimonial');
     let current = 0;
     
-    function showNextTestimonial() {
-      // Get current and next testimonials
-      const currentTestimonial = testimonials[current];
-      const nextTestimonial = testimonials[(current + 1) % testimonials.length];
+    function showTestimonial(index) {
+      testimonials.forEach((testimonial, i) => {
+        testimonial.classList.remove('active', 'prev', 'next');
+        
+        if (i === index) {
+          testimonial.classList.add('active');
+        } else if (i === (index + 1) % testimonials.length) {
+          testimonial.classList.add('next');
+        } else if (i === (index - 1 + testimonials.length) % testimonials.length) {
+          testimonial.classList.add('prev');
+        }
+      });
       
-      // Set classes for animation
-      currentTestimonial.classList.remove('active');
-      currentTestimonial.classList.add('prev');
-      
-      nextTestimonial.classList.remove('next');
-      nextTestimonial.classList.add('active');
-      
-      // Prepare the next testimonial after this one
-      const newNextIndex = (current + 2) % testimonials.length;
-      const newNextTestimonial = testimonials[newNextIndex];
-      newNextTestimonial.classList.add('next');
-      
-      // Reset the previous testimonial
-      setTimeout(() => {
-        currentTestimonial.classList.remove('prev');
-      }, 600);
-      
-      // Update current index
-      current = (current + 1) % testimonials.length;
+      current = index;
     }
     
-    // Start the testimonial rotation
-    const testimonialInterval = setInterval(showNextTestimonial, 6000);
+    function nextTestimonial() {
+      showTestimonial((current + 1) % testimonials.length);
+      resetTestimonialInterval();
+    }
     
-    // Initialize the first two testimonials
-    testimonials[0].classList.add('active');
-    testimonials[1].classList.add('next');
+    function prevTestimonial() {
+      showTestimonial((current - 1 + testimonials.length) % testimonials.length);
+      resetTestimonialInterval();
+    }
+    
+    let testimonialInterval = setInterval(nextTestimonial, 6000);
+    
+    function resetTestimonialInterval() {
+      clearInterval(testimonialInterval);
+      testimonialInterval = setInterval(nextTestimonial, 6000);
+    }
+    
+    // Initialize
+    showTestimonial(0);
+
+    // Sticky navbar com efeito de arrastar
+    const navbar = document.getElementById('navbar');
+    const header = document.querySelector('header');
+    const headerHeight = header.offsetHeight;
+    const navbarHeight = navbar.offsetHeight;
+
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.pageYOffset;
+      
+      // Calcula quanto do header já saiu da tela
+      const headerScrollRatio = Math.min(scrollPosition / headerHeight, 1);
+      
+      if (scrollPosition > headerHeight) {
+        // Header saiu completamente - fixa no topo
+        navbar.classList.add('fixed');
+        navbar.style.transform = 'translateY(0)';
+      } 
+      else if (scrollPosition > 0) {
+        // Header está saindo - arrasta a navbar
+        navbar.classList.remove('fixed');
+        navbar.style.transform = `translateY(${-headerScrollRatio * 100}%)`;
+      }
+      else {
+        // Topo da página - reseta tudo
+        navbar.classList.remove('fixed');
+        navbar.style.transform = 'translateY(0)';
+      }
+    });
+    
+    // Scroll animation for the ink effect
+    window.addEventListener('scroll', function() {
+      const ink = document.querySelector('.floating-ink');
+      const scrollPosition = window.scrollY || window.pageYOffset;
+      ink.style.transform = `translateX(${scrollPosition * 0.3}px)`;
+    });
     
     // Language toggle
     const translations = {
@@ -539,6 +846,62 @@
       presentations: {
         pt: "Slides profissionais e impactantes que destacam seu conteúdo e mantêm a audiência engajada.",
         en: "Professional and impactful slides that highlight your content and keep the audience engaged."
+      },
+      development: {
+        pt: "Nosso Processo de Desenvolvimento",
+        en: "Our Development Process"
+      },
+      devIntro: {
+        pt: "Na v.graphiks, combinamos criatividade, tecnologia e estratégia para criar experiências visuais excepcionais. Nosso processo é projetado para ser flexível, colaborativo e eficiente, garantindo que cada projeto atenda aos mais altos padrões.",
+        en: "At v.graphiks, we combine creativity, technology and strategy to create exceptional visual experiences. Our process is designed to be flexible, collaborative and efficient, ensuring every project meets the highest standards."
+      },
+      discovery: {
+        pt: "1. Descoberta & Estratégia",
+        en: "1. Discovery & Strategy"
+      },
+      discoveryText: {
+        pt: "Começamos entendendo sua visão, objetivos e público-alvo. Através de pesquisa e análise, definimos o melhor caminho.",
+        en: "We start by understanding your vision, goals and target audience. Through research and analysis, we define the best path forward."
+      },
+      concept: {
+        pt: "2. Conceito & Design",
+        en: "2. Concept & Design"
+      },
+      conceptText: {
+        pt: "Nossa equipe cria conceitos inovadores, desde esboços até protótipos digitais, refinando até alinhar perfeitamente com sua marca.",
+        en: "Our team creates innovative concepts, from sketches to digital prototypes, refining until perfectly aligned with your brand."
+      },
+      execution: {
+        pt: "3. Execução & Refinamento",
+        en: "3. Execution & Refinement"
+      },
+      executionText: {
+        pt: "Usando ferramentas de ponta, trazemos os designs para a vida enquanto otimizamos continuamente para impacto e usabilidade.",
+        en: "Using cutting-edge tools, we bring designs to life while continuously optimizing for impact and usability."
+      },
+      testing: {
+        pt: "4. Testes & Entrega",
+        en: "4. Testing & Delivery"
+      },
+      testingText: {
+        pt: "Antes do lançamento, testamos rigorosamente cada elemento para garantir desempenho impecável. Então entregamos o produto final com suporte completo.",
+        en: "Before launch, we rigorously test every element to ensure flawless performance. Then we deliver the final product with full support."
+      },
+      whyChoose: {
+        pt: "Por Que Escolher Nosso Processo?",
+        en: "Why Choose Our Process?"
+      },
+      agile: {
+        pt: "Ágil & Adaptável – Ajustamos ao feedback em tempo real.",
+        en: "Agile & Adaptive – We adjust to feedback in real-time."
+      },
+      tools: {
+        pt: "Ferramentas Modernas – Desde design assistido por IA até motion graphics.",
+        en: "Cutting-Edge Tools – From AI-assisted design to motion graphics."
+      },
+      collaboration: {
+        pt: "Colaboração Transparente – Você está envolvido em cada etapa.",
+        en: "Transparent Collaboration – You're involved at every stage."
       },
       pricing: {
         pt: "Tabela de Preços",
@@ -573,8 +936,8 @@
         en: "Contact Us"
       },
       contactText: {
-        pt: "Tem um projeto em mente? Entre em contacto connosco através do email, WhatsApp ou telefone.",
-        en: "Have a project in mind? Contact us via email, WhatsApp or phone."
+        pt: "Tem um projeto em mente? Entre em contacto connosco através do email, WhatsApp ou telefone. Estamos disponíveis para discutir suas necessidades e criar soluções visuais que destacarão sua marca no mercado.",
+        en: "Have a project in mind? Contact us via email, WhatsApp or phone. We're available to discuss your needs and create visual solutions that will make your brand stand out in the market."
       },
       emailBtn: {
         pt: "Enviar Email",
@@ -583,63 +946,127 @@
       whatsappBtn: {
         pt: "WhatsApp",
         en: "WhatsApp"
+      },
+      navProjects: {
+        pt: "Projetos",
+        en: "Projects"
+      },
+      navDevelopment: {
+        pt: "Desenvolvimento",
+        en: "Development"
+      },
+      navTestimonials: {
+        pt: "Depoimentos",
+        en: "Testimonials"
+      },
+      navPricing: {
+        pt: "Preços",
+        en: "Pricing"
+      },
+      navContact: {
+        pt: "Contato",
+        en: "Contact"
       }
     };
     
-    let isPT = true;
-    function toggleLanguage() {
-      isPT = !isPT;
+    let currentLanguage = 'pt';
+    
+    function setLanguage(lang) {
+      currentLanguage = lang;
+      updateLanguage();
       
-      // Update all translatable elements
+      // Atualiza botões de linguagem
+      document.getElementById('pt-btn').classList.toggle('active', lang === 'pt');
+      document.getElementById('en-btn').classList.toggle('active', lang === 'en');
+    }
+    
+    function updateLanguage() {
+      // Descrição
       document.getElementById('description').querySelector('p').innerText = 
-        translations.description[isPT ? 'pt' : 'en'];
+        translations.description[currentLanguage];
       
+      // Serviços
       document.querySelector('.services h2').innerText = 
-        translations.services[isPT ? 'pt' : 'en'];
+        translations.services[currentLanguage];
       
-      document.querySelectorAll('.service-card h3').forEach((h3, i) => {
-        const p = h3.nextElementSibling;
-        switch(i) {
-          case 0: 
-            p.innerText = translations.branding[isPT ? 'pt' : 'en'];
-            break;
-          case 1:
-            p.innerText = translations.motion[isPT ? 'pt' : 'en'];
-            break;
-          case 2:
-            p.innerText = translations.graphic[isPT ? 'pt' : 'en'];
-            break;
-          case 3:
-            p.innerText = translations.presentations[isPT ? 'pt' : 'en'];
-            break;
-        }
-      });
+      // Cards de serviço
+      const serviceCards = document.querySelectorAll('.service-card');
+      serviceCards[0].querySelector('p').innerText = translations.branding[currentLanguage];
+      serviceCards[1].querySelector('p').innerText = translations.motion[currentLanguage];
+      serviceCards[2].querySelector('p').innerText = translations.graphic[currentLanguage];
+      serviceCards[3].querySelector('p').innerText = translations.presentations[currentLanguage];
       
+      // Desenvolvimento
+      document.querySelector('.development h2').innerText = 
+        translations.development[currentLanguage];
+      
+      document.querySelector('.development p').innerText = 
+        translations.devIntro[currentLanguage];
+      
+      const processSteps = document.querySelectorAll('.process-step');
+      processSteps[0].querySelector('h3').innerText = translations.discovery[currentLanguage];
+      processSteps[0].querySelector('p').innerText = translations.discoveryText[currentLanguage];
+      processSteps[1].querySelector('h3').innerText = translations.concept[currentLanguage];
+      processSteps[1].querySelector('p').innerText = translations.conceptText[currentLanguage];
+      processSteps[2].querySelector('h3').innerText = translations.execution[currentLanguage];
+      processSteps[2].querySelector('p').innerText = translations.executionText[currentLanguage];
+      processSteps[3].querySelector('h3').innerText = translations.testing[currentLanguage];
+      processSteps[3].querySelector('p').innerText = translations.testingText[currentLanguage];
+      
+      document.querySelector('.why-choose h3').innerText = 
+        translations.whyChoose[currentLanguage];
+      
+      const whyChooseItems = document.querySelectorAll('.why-choose p');
+      whyChooseItems[0].innerHTML = `✅ <strong>${translations.agile[currentLanguage].split(' – ')[0]}</strong> – ${translations.agile[currentLanguage].split(' – ')[1]}`;
+      whyChooseItems[1].innerHTML = `✅ <strong>${translations.tools[currentLanguage].split(' – ')[0]}</strong> – ${translations.tools[currentLanguage].split(' – ')[1]}`;
+      whyChooseItems[2].innerHTML = `✅ <strong>${translations.collaboration[currentLanguage].split(' – ')[0]}</strong> – ${translations.collaboration[currentLanguage].split(' – ')[1]}`;
+      
+      // Tabela de preços
       document.querySelector('.pricing h2').innerText = 
-        translations.pricing[isPT ? 'pt' : 'en'];
+        translations.pricing[currentLanguage];
       
       const tableCells = document.querySelectorAll('.pricing td');
-      tableCells[1].innerText = translations.logoDesc[isPT ? 'pt' : 'en'];
-      tableCells[4].innerText = translations.identityDesc[isPT ? 'pt' : 'en'];
-      tableCells[7].innerText = translations.motionDesc[isPT ? 'pt' : 'en'];
-      tableCells[10].innerText = translations.socialDesc[isPT ? 'pt' : 'en'];
-      tableCells[13].innerText = translations.presentationDesc[isPT ? 'pt' : 'en'];
+      tableCells[1].innerText = translations.logoDesc[currentLanguage];
+      tableCells[4].innerText = translations.identityDesc[currentLanguage];
+      tableCells[7].innerText = translations.motionDesc[currentLanguage];
+      tableCells[10].innerText = translations.socialDesc[currentLanguage];
+      tableCells[13].innerText = translations.presentationDesc[currentLanguage];
       
       document.querySelector('.pricing p').innerText = 
-        translations.note[isPT ? 'pt' : 'en'];
+        translations.note[currentLanguage];
 
-      // Contact section translations
+      // Contato
       document.querySelector('.contact-section h2').innerText = 
-        translations.contact[isPT ? 'pt' : 'en'];
+        translations.contact[currentLanguage];
       
       document.querySelector('.contact-section p').innerText = 
-        translations.contactText[isPT ? 'pt' : 'en'];
+        translations.contactText[currentLanguage];
       
       document.querySelector('.contact-btn:not(.whatsapp-btn)').innerText = 
-        translations.emailBtn[isPT ? 'pt' : 'en'];
+        translations.emailBtn[currentLanguage];
       
-      document.querySelector('.translate-btn').innerText = isPT ? 'EN' : 'PT';
+      // Links da navbar
+      const navLinks = document.querySelectorAll('.nav-links a');
+      navLinks[0].innerText = translations.navProjects[currentLanguage];
+      navLinks[1].innerText = translations.navDevelopment[currentLanguage];
+      navLinks[2].innerText = translations.navTestimonials[currentLanguage];
+      navLinks[3].innerText = translations.navPricing[currentLanguage];
+      navLinks[4].innerText = translations.navContact[currentLanguage];
+      
+      // Botão do WhatsApp
+      const whatsappBtn = document.querySelector('.whatsapp-btn');
+      if (whatsappBtn) {
+        whatsappBtn.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" style="margin-right: 8px;">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          ${translations.whatsappBtn[currentLanguage]}
+        `;
+      }
     }
+    
+    // Initialize
+    updateLanguage();
   </script>
 </body>
 </html>
