@@ -12,6 +12,7 @@
       --text-dark: #333;
       --text-light: #fff;
       --bg-light: #f9f9f9;
+      --parallax-pos: 0;
     }
     
     body {
@@ -199,17 +200,37 @@
     .service-card h3 {
       color: var(--primary);
     }
-    
-    /* New Development Section Styles */
+
+    /* Nova Seção Development com Parallax */
     .development {
       padding: 80px 20px;
       background-color: var(--bg-light);
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    
+
+    .development::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://cdn.pixabay.com/photo/2016/05/24/16/48/mountains-1412683_1280.png') center/cover;
+      opacity: 0.1;
+      mix-blend-mode: multiply;
+      z-index: 0;
+      transform: translateX(calc(var(--parallax-pos) * 0.5));
+      will-change: transform;
+      transition: transform 0.5s ease-out;
+    }
+
     .development-container {
       max-width: 1200px;
       margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
     
     .process-steps {
@@ -230,25 +251,6 @@
     
     .process-step:hover {
       transform: translateY(-5px);
-    }
-    
-    .ink-scroll-effect {
-      position: relative;
-      height: 300px;
-      overflow: hidden;
-      margin: 60px 0;
-      background-color: rgba(0, 68, 255, 0.05);
-      border-radius: 10px;
-    }
-    
-    .floating-ink {
-      position: absolute;
-      width: 120%;
-      max-width: none;
-      left: -10%;
-      transition: transform 0.5s ease-out;
-      opacity: 0.9;
-      mix-blend-mode: multiply;
     }
     
     .why-choose {
@@ -548,11 +550,6 @@
         padding: 5px 10px;
         font-size: 12px;
       }
-      
-      .ink-scroll-effect {
-        height: 200px;
-        margin: 30px 0;
-      }
     }
   </style>
 </head>
@@ -603,7 +600,7 @@
     </div>
   </section>
   
-  <!-- New Development Section -->
+  <!-- Seção de Desenvolvimento com Parallax -->
   <section class="development" id="development">
     <div class="development-container">
       <h2>Nosso Processo de Desenvolvimento</h2>
@@ -630,11 +627,6 @@
           <h3>4. Testes & Entrega</h3>
           <p>Antes do lançamento, testamos rigorosamente cada elemento para garantir desempenho impecável. Então entregamos o produto final com suporte completo.</p>
         </div>
-      </div>
-      
-      <!-- Blue Ink Animation -->
-      <div class="ink-scroll-effect">
-        <img src="https://cdn.pixabay.com/photo/2016/05/24/16/48/mountains-1412683_1280.png" alt="Efeito de Tinta Azul Dinâmica" class="floating-ink">
       </div>
       
       <div class="why-choose">
@@ -814,11 +806,11 @@
       }
     });
     
-    // Scroll animation for the ink effect
+    // Efeito Parallax para a seção Development
     window.addEventListener('scroll', function() {
-      const ink = document.querySelector('.floating-ink');
+      const developmentSection = document.querySelector('.development');
       const scrollPosition = window.scrollY || window.pageYOffset;
-      ink.style.transform = `translateX(${scrollPosition * 0.3}px)`;
+      developmentSection.style.setProperty('--parallax-pos', `${scrollPosition * 0.3}px`);
     });
     
     // Language toggle
