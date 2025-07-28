@@ -176,17 +176,22 @@ function initParallax() {
 }
 
 // =============================================
-// Módulo: Language Switcher
+// Módulo: Language Switcher (Completo e Atualizado)
 // =============================================
 function initLanguageSystem() {
   const translations = {
     pt: {
+      // Navegação
       "projects": "Projetos",
       "development": "Desenvolvimento",
       "testimonials": "Depoimentos",
       "pricing": "Preços",
       "contact": "Contato",
+      
+      // Descrição
       "description_text": "Na v.graphiks, criamos soluções visuais que combinam criatividade, funcionalidade e impacto. Do branding ao motion design, os nossos clientes confiam no nosso trabalho para dar vida às suas ideias e destacar as suas marcas.",
+      
+      // Serviços
       "services_title": "Nossos Serviços",
       "service1_title": "Branding",
       "service1_text": "Criação de identidades visuais completas que comunicam a essência da sua marca de forma memorável.",
@@ -196,20 +201,18 @@ function initLanguageSystem() {
       "service3_text": "Soluções visuais para impressos e digitais, desde cartões de visita a banners para redes sociais.",
       "service4_title": "Apresentações",
       "service4_text": "Slides profissionais e impactantes que destacam seu conteúdo e mantêm a audiência engajada.",
+      
+      // Processo
       "development_title": "Nosso Processo de Desenvolvimento",
-      "development_text": "Na v.graphiks, combinamos criatividade, tecnologia e estratégia para criar experiências visuais excepcionais. Nosso processo é projetado para ser flexível, colaborativo e eficiente, garantindo que cada projeto atenda aos mais altos padrões.",
-      "step1_title": "1. Descoberta & Estratégia",
-      "step1_text": "Começamos entendendo sua visão, objetivos e público-alvo. Através de pesquisa e análise, definimos o melhor caminho.",
-      "step2_title": "2. Conceito & Design",
-      "step2_text": "Nossa equipe cria conceitos inovadores, desde esboços até protótipos digitais, refinando até alinhar perfeitamente com sua marca.",
-      "step3_title": "3. Execução & Refinamento",
-      "step3_text": "Usando ferramentas de ponta, trazemos os designs para a vida enquanto otimizamos continuamente para impacto e usabilidade.",
-      "step4_title": "4. Testes & Entrega",
-      "step4_text": "Antes do lançamento, testamos rigorosamente cada elemento para garantir desempenho impecável. Então entregamos o produto final com suporte completo.",
-      "why_choose_title": "Por Que Escolher Nosso Processo?",
-      "why1": "✅ Ágil & Adaptável – Ajustamos ao feedback em tempo real.",
-      "why2": "✅ Ferramentas Modernas – Desde design assistido por IA até motion graphics.",
-      "why3": "✅ Colaboração Transparente – Você está envolvido em cada etapa.",
+      "development_text": "Na V.GRAPHIKS, combinamos criatividade, tecnologia e estratégia para criar experiências visuais excepcionais. Nosso processo é projetado para ser flexível, colaborativo e eficiente, garantindo que cada projeto atenda aos mais altos padrões.",
+      
+      // Depoimentos
+      "testimonial1_text": "A v.graphiks superou as minhas expectativas! O branding que criaram para a nossa empresa foi simplesmente incrível e ajudou-nos a estabelecer uma identidade forte no mercado.",
+      "testimonial2_text": "Serviço muito profissional e rápido. A v.graphiks captou exatamente o que pretendíamos para os nossos vídeos promocionais, resultando num aumento de 30% no engajamento.",
+      "testimonial3_text": "Fiquei impressionada com a atenção ao detalhe e a capacidade de traduzir ideias abstratas em designs concretos. Recomendo vivamente a v.graphiks para qualquer projeto de design.",
+      
+      // Preços
+      "pricing_title": "Tabela de Preços",
       "service_col": "Serviço",
       "description_col": "Descrição",
       "price_col": "Preço",
@@ -218,43 +221,49 @@ function initLanguageSystem() {
       "motion_design": "Motion Design",
       "social_post": "Post para Redes Sociais",
       "presentation": "Apresentação",
-      "pricing_title": "Tabela de Preços",
+      
+      // Contato
       "contact_title": "Contacte-nos",
       "contact_text": "Tem um projeto em mente? Entre em contacto connosco através do email, WhatsApp ou telefone. Estamos disponíveis para discutir suas necessidades e criar soluções visuais que destacarão sua marca no mercado.",
       "send_email": "Enviar Email",
       "whatsapp": "WhatsApp",
+      
+      // Footer
       "footer_text": "v.graphiks - Todos os direitos reservados"
     },
     en: {
+      // Navigation
       "projects": "Projects",
       "development": "Development",
       "testimonials": "Testimonials",
       "pricing": "Pricing",
       "contact": "Contact",
+      
+      // Description
       "description_text": "At v.graphiks, we create visual solutions that combine creativity, functionality and impact. From branding to motion design, our clients trust our work to bring their ideas to life and make their brands stand out.",
+      
+      // Services
       "services_title": "Our Services",
       "service1_title": "Branding",
-      "service1_text": "Creation of complete visual identities that communicate the essence of your brand in a memorable way.",
+      "service1_text": "Creation of complete visual identities that communicate your brand's essence in a memorable way.",
       "service2_title": "Motion Design",
-      "service2_text": "Animations and videos that tell stories and engage your target audience dynamically.",
+      "service2_text": "Animations and videos that tell stories and dynamically engage your target audience.",
       "service3_title": "Graphic Design",
       "service3_text": "Visual solutions for print and digital, from business cards to social media banners.",
       "service4_title": "Presentations",
       "service4_text": "Professional and impactful slides that highlight your content and keep the audience engaged.",
+      
+      // Process
       "development_title": "Our Development Process",
-      "development_text": "At v.graphiks, we combine creativity, technology and strategy to create exceptional visual experiences. Our process is designed to be flexible, collaborative and efficient, ensuring each project meets the highest standards.",
-      "step1_title": "1. Discovery & Strategy",
-      "step1_text": "We start by understanding your vision, goals and target audience. Through research and analysis, we define the best path.",
-      "step2_title": "2. Concept & Design",
-      "step2_text": "Our team creates innovative concepts, from sketches to digital prototypes, refining until perfectly aligned with your brand.",
-      "step3_title": "3. Execution & Refinement",
-      "step3_text": "Using cutting-edge tools, we bring designs to life while continuously optimizing for impact and usability.",
-      "step4_title": "4. Testing & Delivery",
-      "step4_text": "Before launch, we rigorously test each element to ensure flawless performance. Then we deliver the final product with full support.",
-      "why_choose_title": "Why Choose Our Process?",
-      "why1": "✅ Agile & Adaptable – We adjust to feedback in real time.",
-      "why2": "✅ Modern Tools – From AI-assisted design to motion graphics.",
-      "why3": "✅ Transparent Collaboration – You're involved in every step.",
+      "development_text": "At V.GRAPHIKS, we combine creativity, technology and strategy to create exceptional visual experiences. Our process is designed to be flexible, collaborative and efficient, ensuring every project meets the highest standards.",
+      
+      // Testimonials
+      "testimonial1_text": "v.graphiks exceeded my expectations! The branding they created for our company was simply amazing and helped us establish a strong identity in the market.",
+      "testimonial2_text": "Very professional and fast service. v.graphiks captured exactly what we wanted for our promotional videos, resulting in a 30% increase in engagement.",
+      "testimonial3_text": "I was impressed with the attention to detail and ability to translate abstract ideas into concrete designs. I highly recommend v.graphiks for any design project.",
+      
+      // Pricing
+      "pricing_title": "Pricing Table",
       "service_col": "Service",
       "description_col": "Description",
       "price_col": "Price",
@@ -263,11 +272,14 @@ function initLanguageSystem() {
       "motion_design": "Motion Design",
       "social_post": "Social Media Post",
       "presentation": "Presentation",
-      "pricing_title": "Pricing Table",
+      
+      // Contact
       "contact_title": "Contact Us",
       "contact_text": "Have a project in mind? Contact us via email, WhatsApp or phone. We're available to discuss your needs and create visual solutions that will make your brand stand out in the market.",
       "send_email": "Send Email",
       "whatsapp": "WhatsApp",
+      
+      // Footer
       "footer_text": "v.graphiks - All rights reserved"
     }
   };
@@ -276,107 +288,65 @@ function initLanguageSystem() {
   
   const setLanguage = (lang) => {
     if (currentLanguage === lang) return;
-    
     currentLanguage = lang;
-    updateLanguage();
     localStorage.setItem('preferredLanguage', lang);
-    
-    // Update buttons
-    document.getElementById('pt-btn')?.classList.toggle('active', lang === 'pt');
-    document.getElementById('en-btn')?.classList.toggle('active', lang === 'en');
+    updateLanguage();
   };
-  
+
   const updateLanguage = () => {
-    // Update all elements with data-translate attribute
+    // Atualiza elementos com data-translate
     document.querySelectorAll('[data-translate]').forEach(el => {
       const key = el.getAttribute('data-translate');
       if (translations[currentLanguage][key]) {
-        if (el.tagName === 'INPUT' && el.type === 'placeholder') {
-          el.placeholder = translations[currentLanguage][key];
+        if (el.hasAttribute('data-html')) {
+          el.innerHTML = translations[currentLanguage][key];
         } else {
           el.textContent = translations[currentLanguage][key];
         }
       }
     });
 
-    // Update navigation links
-    document.querySelectorAll('.nav-links a').forEach((link, index) => {
-      const keys = ['projects', 'development', 'testimonials', 'pricing', 'contact'];
-      if (keys[index]) {
-        link.textContent = translations[currentLanguage][keys[index]];
+    // Atualiza os depoimentos
+    const testimonials = document.querySelectorAll('.testimonial-content p');
+    testimonials.forEach((testimonial, index) => {
+      const key = `testimonial${index + 1}_text`;
+      if (translations[currentLanguage][key]) {
+        testimonial.textContent = translations[currentLanguage][key];
       }
     });
 
-    // Update service cards
-    document.querySelectorAll('.service-card h3').forEach((card, index) => {
-      const keys = ['service1_title', 'service2_title', 'service3_title', 'service4_title'];
-      if (keys[index]) {
-        card.textContent = translations[currentLanguage][keys[index]];
+    // Atualiza os textos das features
+    document.querySelectorAll('.feature h3').forEach((feature, index) => {
+      const key = `feature${index + 1}_title`;
+      if (translations[currentLanguage][key]) {
+        feature.textContent = translations[currentLanguage][key];
       }
     });
 
-    document.querySelectorAll('.service-card p').forEach((card, index) => {
-      const keys = ['service1_text', 'service2_text', 'service3_text', 'service4_text'];
-      if (keys[index]) {
-        card.textContent = translations[currentLanguage][keys[index]];
+    document.querySelectorAll('.feature p').forEach((feature, index) => {
+      const key = `feature${index + 1}_text`;
+      if (translations[currentLanguage][key]) {
+        feature.textContent = translations[currentLanguage][key];
       }
     });
-
-    // Update process steps
-    document.querySelectorAll('.process-step h3').forEach((step, index) => {
-      const keys = ['step1_title', 'step2_title', 'step3_title', 'step4_title'];
-      if (keys[index]) {
-        step.textContent = translations[currentLanguage][keys[index]];
-      }
-    });
-
-    document.querySelectorAll('.process-step p').forEach((step, index) => {
-      const keys = ['step1_text', 'step2_text', 'step3_text', 'step4_text'];
-      if (keys[index] && translations[currentLanguage][keys[index]]) {
-        step.textContent = translations[currentLanguage][keys[index]];
-      }
-    });
-
-    // Update why choose section
-    const whyChoose = document.querySelector('.why-choose');
-    if (whyChoose) {
-      whyChoose.querySelector('h3').textContent = translations[currentLanguage]['why_choose_title'];
-      whyChoose.querySelectorAll('p').forEach((p, index) => {
-        const keys = ['why1', 'why2', 'why3'];
-        if (keys[index]) {
-          p.textContent = translations[currentLanguage][keys[index]];
-        }
-      });
-    }
-
-    // Update pricing table
-    document.querySelectorAll('.pricing th').forEach((th, index) => {
-      const keys = ['service_col', 'description_col', 'price_col'];
-      if (keys[index]) {
-        th.textContent = translations[currentLanguage][keys[index]];
-      }
-    });
-
-    document.querySelectorAll('.pricing td').forEach((td, index) => {
-      const keys = ['logo_design', 'visual_identity', 'motion_design', 'social_post', 'presentation'];
-      if (keys[index]) {
-        td.textContent = translations[currentLanguage][keys[index]];
-      }
-    });
-
-    // Update footer
-    const footer = document.querySelector('footer p');
-    if (footer) {
-      const year = new Date().getFullYear();
-      footer.innerHTML = `© ${year} ${translations[currentLanguage]['footer_text']}`;
-    }
   };
+
+  // Event listeners para botões de idioma
+  const ptBtn = document.getElementById('pt-btn');
+  const enBtn = document.getElementById('en-btn');
   
-  // Public interface
-  window.setLanguage = setLanguage;
-  
-  // Initialize
+  if (ptBtn && enBtn) {
+    ptBtn.addEventListener('click', () => setLanguage('pt'));
+    enBtn.addEventListener('click', () => setLanguage('en'));
+    
+    // Atualiza estado dos botões
+    ptBtn.classList.toggle('active', currentLanguage === 'pt');
+    enBtn.classList.toggle('active', currentLanguage === 'en');
+  }
+
+  // Inicializa
   updateLanguage();
+  window.setLanguage = setLanguage;
 }
 
 // =============================================

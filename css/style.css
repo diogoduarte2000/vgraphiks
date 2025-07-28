@@ -43,13 +43,14 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   letter-spacing: -1px;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+  margin-bottom: 2rem;
   position: relative;
   display: inline-block;
 }
@@ -57,22 +58,80 @@ h2 {
 h2:after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -12px;
   left: 0;
   width: 50%;
-  height: 3px;
+  height: 4px;
   background: var(--secondary);
 }
 
 h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: var(--text-dark);
+  font-size: 1.4rem;
+  line-height: 1.8;
 }
+
+
+
+
+
+
+
+
+
+.process-features {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    background: #afafaf;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.feature p {
+    color: #555;
+    line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* =============================================
    Layout Components
@@ -81,33 +140,39 @@ p {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 section {
-  padding: 4rem 1rem;
+  padding: 5rem 1.5rem;
 }
 
 /* =============================================
-   Header & Navigation
+   Header & Navigation - UPDATED
    ============================================= */
 header {
   background-color: var(--bg-darker);
   color: var(--primary);
-  padding: 6rem 1rem;
+  padding: 12rem 1rem 10rem;
   text-align: center;
   position: relative;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar {
   background-color: var(--bg-darker);
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   transition: all var(--transition);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -117,22 +182,23 @@ header {
   align-items: center;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .nav-links a {
   color: var(--text-dark);
   text-decoration: none;
   font-weight: 500;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem;
   border-radius: var(--border-radius);
   transition: all var(--transition);
+  font-size: 1.1rem;
 }
 
 .nav-links a:hover {
@@ -142,73 +208,83 @@ header {
 
 .language-buttons {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .language-btn {
   background: var(--primary);
   color: var(--text-light);
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
   transition: all var(--transition);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .language-btn:hover {
   background: #3a5ae8;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .language-btn.active {
   background: #3a5ae8;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* =============================================
-   Sections
+   Sections - UPDATED
    ============================================= */
 .description {
   text-align: center;
   background-color: var(--bg-light);
-  padding: 3rem 1rem;
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 5rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto 8rem;
   border-radius: var(--border-radius);
+  position: relative;
+  z-index: 2;
+  margin-top: 10rem;
 }
 
 .services {
   background-color: var(--bg-dark);
   text-align: center;
+  padding: 6rem 1.5rem;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: 2rem auto;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 3rem auto;
 }
 
 .service-card {
   background: var(--card-bg);
   border-radius: var(--border-radius);
-  padding: 1.5rem;
+  padding: 2rem;
   box-shadow: var(--box-shadow);
   transition: all var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   border-color: rgba(74, 107, 255, 0.3);
 }
 
 .service-card h3 {
   color: var(--primary);
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.service-card p {
+  font-size: 1.05rem;
 }
 
 /* Development Section with Parallax */
@@ -217,21 +293,22 @@ header {
   overflow: hidden;
   background-color: var(--bg-light);
   text-align: center;
-  min-height: 600px;
+  min-height: 650px;
+  padding: 7rem 1.5rem;
 }
 
 .development::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: -15%;
+  right: -15%;
   bottom: 0;
-  background: url('../img/paint.png') center/cover no-repeat;
-  opacity: 0.15;
+  background: url('../img/paint.png') 20% center/cover no-repeat;
+  opacity: 0.2;
   mix-blend-mode: lighten;
   z-index: 0;
-  transform: translateX(calc(var(--parallax-pos) * 0.5));
+  transform: translateX(calc(var(--parallax-pos) * 1.2));
   will-change: transform;
   transition: transform 0.4s ease-out;
 }
@@ -241,39 +318,44 @@ header {
   z-index: 1;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 4rem 1rem;
+}
+
+.development-container p:first-of-type {
+  margin: 3rem auto 4rem;
+  max-width: 800px;
+  font-size: 1.15rem;
 }
 
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
 }
 
 .process-step {
   background: var(--card-bg);
   border-radius: var(--border-radius);
-  padding: 1.5rem;
+  padding: 2rem;
   box-shadow: var(--box-shadow);
   transition: transform var(--transition);
-  border-left: 4px solid var(--primary);
+  border-left: 5px solid var(--primary);
   text-align: left;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .process-step:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   border-color: rgba(74, 107, 255, 0.3);
 }
 
 .why-choose {
   background: var(--card-bg);
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: var(--border-radius);
-  margin-top: 2rem;
+  margin-top: 3rem;
   box-shadow: var(--box-shadow);
-  border-top: 4px solid var(--secondary);
+  border-top: 5px solid var(--secondary);
   text-align: left;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -281,9 +363,10 @@ header {
 /* Testimonials */
 .testimonials {
   position: relative;
-  height: 400px;
+  height: 450px;
   overflow: hidden;
   background: #000;
+  margin: 6rem 0;
 }
 
 .testimonial {
@@ -296,7 +379,7 @@ header {
   align-items: center;
   justify-content: center;
   transition: all 0.5s ease-in-out;
-  padding: 1rem;
+  padding: 2rem;
   opacity: 0;
 }
 
@@ -315,12 +398,12 @@ header {
 
 .testimonial-content {
   background: rgba(30, 30, 30, 0.9);
-  padding: 1.5rem;
-  max-width: 700px;
+  padding: 2rem;
+  max-width: 750px;
   border-radius: var(--border-radius);
   z-index: 2;
   text-align: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
   color: var(--text-dark);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -345,35 +428,37 @@ header {
 }
 
 .testimonial-arrow {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   color: white;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: all var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 1rem;
+  margin: 0 1.5rem;
 }
 
 .testimonial-arrow:hover {
   background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
 }
 
 /* Pricing */
 .pricing {
   background: var(--bg-light);
   text-align: center;
+  padding: 6rem 1.5rem;
 }
 
 .pricing table {
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 850px;
+  margin: 3rem auto;
   border-collapse: collapse;
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
@@ -382,7 +467,7 @@ header {
 }
 
 .pricing th, .pricing td {
-  padding: 0.8rem;
+  padding: 1rem;
   text-align: left;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -391,6 +476,7 @@ header {
   background-color: var(--primary);
   color: white;
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .pricing tr:nth-child(even) {
@@ -405,36 +491,41 @@ header {
 .contact-section {
   background-color: var(--bg-darker);
   color: white;
-  padding: 3rem 1rem;
+  padding: 6rem 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 6rem;
 }
 
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  max-width: 1000px;
+  gap: 3rem;
+  max-width: 1100px;
   margin: 0 auto;
   align-items: center;
 }
 
-.contact-text {
-  font-size: 1.1rem;
-  line-height: 1.6;
+.contact-text h2 {
+  color: var(--secondary);
+}
+
+.contact-text p {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
 }
 
 .contact-options {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.5rem;
 }
 
 .contact-btn {
   background-color: var(--primary);
   color: var(--text-light);
   border: none;
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   border-radius: var(--border-radius);
   cursor: pointer;
@@ -445,7 +536,8 @@ header {
 
 .contact-btn:hover {
   background-color: #3a5ae8;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .whatsapp-btn {
@@ -464,14 +556,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  font-size: 1.1rem;
-  margin-top: 1rem;
+  gap: 1rem;
+  font-size: 1.3rem;
+  margin-top: 2rem;
 }
 
 .phone-icon {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   fill: var(--secondary);
 }
 
@@ -480,62 +572,136 @@ footer {
   background-color: var(--bg-darker);
   color: white;
   text-align: center;
-  padding: 1.5rem;
+  padding: 3rem 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 6rem;
+}
+
+footer p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
 }
 
 /* =============================================
    Responsive Styles
    ============================================= */
-@media (max-width: 768px) {
-  section {
-    padding: 3rem 1rem;
+@media (max-width: 1024px) {
+  header {
+    padding: 10rem 1rem 8rem;
+    min-height: 50vh;
+    margin-bottom: 6rem;
   }
-
-  .nav-links {
-    gap: 0.8rem;
+  
+  .description {
+    margin-bottom: 6rem;
   }
-
-  .services-grid,
-  .process-steps {
-    grid-template-columns: 1fr;
-  }
-
-  .testimonials {
-    height: 450px;
-  }
-
+  
   .contact-container {
-    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 8rem 1rem 6rem;
+    min-height: 45vh;
+    margin-bottom: 5rem;
+  }
+  
+  section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .services,
+  .pricing,
+  .contact-section {
+    padding: 5rem 1.5rem;
+  }
+  
+  .description {
+    padding: 4rem 1.5rem;
+    margin-bottom: 5rem;
+  }
+  
+  .nav-links {
     gap: 1.5rem;
   }
-
-  .development::before {
-    background-size: contain;
-    opacity: 0.15;
+  
+  .development {
+    padding: 6rem 1.5rem;
+    min-height: 600px;
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .testimonials {
+    height: 400px;
+    margin: 5rem 0;
   }
 }
 
 @media (max-width: 480px) {
-  .navbar {
-    padding: 0.8rem 0;
+  header {
+    padding: 7rem 1rem 5rem;
+    min-height: 40vh;
+    margin-bottom: 4rem;
   }
-
+  
+  h1 {
+    font-size: 2.8rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  section {
+    padding: 3.5rem 1rem;
+  }
+  
+  .services,
+  .pricing,
+  .contact-section {
+    padding: 4rem 1rem;
+  }
+  
+  .description {
+    padding: 3.5rem 1rem;
+    margin-bottom: 4rem;
+  }
+  
   .nav-links {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
-
-  .language-buttons {
-    margin-left: 0.5rem;
+  
+  .services-grid,
+  .process-steps {
+    grid-template-columns: 1fr;
   }
-
-  .testimonial-content {
-    padding: 1rem;
+  
+  .development {
+    padding: 5rem 1rem;
+    min-height: 550px;
   }
-
-  .contact-btn {
-    padding: 0.7rem 1rem;
+  
+  .testimonials {
+    height: 350px;
+    margin: 4rem 0;
+  }
+  
+  .testimonial-arrow {
+    width: 40px;
+    height: 40px;
+    margin: 0 1rem;
+  }
+  
+  footer {
+    padding: 2.5rem 1rem;
+    margin-top: 4rem;
   }
 }
 
