@@ -31,7 +31,27 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Atualiza o ano no footer
   document.getElementById('current-year').textContent = new Date().getFullYear();
+
+  initMobileMenu();
 });
+
+function initMobileMenu() {
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  }
+}
 
 // =============================================
 // Módulo: Touch Events
@@ -187,7 +207,7 @@ function initParallax() {
 }
 
 // =============================================
-// Módulo: Language Switcher (Completo e Atualizado)
+// Módulo: Language Switcher (Corrigido)
 // =============================================
 function initLanguageSystem() {
   const translations = {
@@ -347,8 +367,6 @@ function initLanguageSystem() {
       }
     });
 
-    
-
     // Atualiza os textos das features
     document.querySelectorAll('.feature h3').forEach((feature, index) => {
       const key = `feature${index + 1}_title`;
@@ -363,22 +381,14 @@ function initLanguageSystem() {
         feature.textContent = translations[currentLanguage][key];
       }
     });
-  };
-  
-  // Atualiza os textos das features
-    document.querySelectorAll('.feature h3').forEach((feature, index) => {
-      const key = `feature${index + 1}_title`;
-      if (translations[currentLanguage][key]) {
-        feature.textContent = translations[currentLanguage][key];
-      }
-    });
 
-    document.querySelectorAll('.feature p').forEach((feature, index) => {
-      const key = `feature${index + 1}_text`;
-      if (translations[currentLanguage][key]) {
-        feature.textContent = translations[currentLanguage][key];
-      }
-    });
+    // Atualiza estado dos botões de idioma
+    const ptBtn = document.getElementById('pt-btn');
+    const enBtn = document.getElementById('en-btn');
+    if (ptBtn && enBtn) {
+      ptBtn.classList.toggle('active', currentLanguage === 'pt');
+      enBtn.classList.toggle('active', currentLanguage === 'en');
+    }
   };
 
   // Event listeners para botões de idioma
@@ -388,16 +398,12 @@ function initLanguageSystem() {
   if (ptBtn && enBtn) {
     ptBtn.addEventListener('click', () => setLanguage('pt'));
     enBtn.addEventListener('click', () => setLanguage('en'));
-    
-    // Atualiza estado dos botões
-    ptBtn.classList.toggle('active', currentLanguage === 'pt');
-    enBtn.classList.toggle('active', currentLanguage === 'en');
   }
 
   // Inicializa
   updateLanguage();
   window.setLanguage = setLanguage;
-
+}
 
 // =============================================
 // Funções Auxiliares
@@ -463,4 +469,3 @@ function detectMobile() {
     };
   }
 })();
-
