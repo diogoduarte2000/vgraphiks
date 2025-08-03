@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonials();
   initParallax();
   initLanguageSystem();
+  initTouchEvents();
   
   // Carrega CSS crítico
   loadCriticalCSS();
@@ -31,6 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
   // Atualiza o ano no footer
   document.getElementById('current-year').textContent = new Date().getFullYear();
 });
+
+// =============================================
+// Módulo: Touch Events
+// =============================================
+function initTouchEvents() {
+  // Melhorar usabilidade em touch devices
+  if ('ontouchstart' in window || navigator.maxTouchPoints) {
+    document.documentElement.classList.add('touch-device', 'no-hover');
+  }
+}
 
 // =============================================
 // Módulo: Sticky Navigation
@@ -229,7 +240,17 @@ function initLanguageSystem() {
       "whatsapp": "WhatsApp",
       
       // Footer
-      "footer_text": "v.graphiks - Todos os direitos reservados"
+      "footer_text": "v.graphiks - Todos os direitos reservados",
+
+      // Processo de Desenvolvimento - Features
+      "feature1_title": "Ágil & Adaptável",
+      "feature1_text": "Somos rápidos como um clique e flexíveis como um bom design! Ajustamo-nos ao teu feedback em tempo real 🕒, garantindo que cada detalhe reflete exatamente o que imaginaste (ou até melhor!).",
+      
+      "feature2_title": "Ferramentas Modernas",
+      "feature2_text": "Utilizamos as tecnologias mais recentes, desde inteligência artificial no processo criativo 🤖 até motion graphics cativantes 🌀, para levar o teu projeto a outro nível.",
+      
+      "feature3_title": "Colaboração Transparente",
+      "feature3_text": "Nada de surpresas! Estás presente em cada etapa do processo. Partilhamos ideias, esboços e versões contigo, para que o resultado final seja teu de verdade 💬✨."
     },
     en: {
       // Navigation
@@ -280,7 +301,18 @@ function initLanguageSystem() {
       "whatsapp": "WhatsApp",
       
       // Footer
-      "footer_text": "v.graphiks - All rights reserved"
+      "footer_text": "v.graphiks - All rights reserved",
+
+      // Development Process - Features
+      "feature1_title": "Ágil & Adaptável",
+      "feature1_text": "We're as fast as a click and as flexible as good design! We adjust to your feedback in real time 🕒, ensuring every detail reflects exactly what you imagined (or even better!).",
+      
+      "feature2_title": "Modern Tools",
+      "feature2_text": "We use the latest technologies, from artificial intelligence in the creative process 🤖 to captivating motion graphics 🌀, to take your project to the next level.",
+      
+      "feature3_title": "Transparent Collaboration",
+      "feature3_text": "No surprises! You're present at every stage of the process. We share ideas, sketches and versions with you, so the final result is truly yours 💬✨.",
+
     }
   };
 
@@ -315,7 +347,25 @@ function initLanguageSystem() {
       }
     });
 
+    
+
     // Atualiza os textos das features
+    document.querySelectorAll('.feature h3').forEach((feature, index) => {
+      const key = `feature${index + 1}_title`;
+      if (translations[currentLanguage][key]) {
+        feature.textContent = translations[currentLanguage][key];
+      }
+    });
+
+    document.querySelectorAll('.feature p').forEach((feature, index) => {
+      const key = `feature${index + 1}_text`;
+      if (translations[currentLanguage][key]) {
+        feature.textContent = translations[currentLanguage][key];
+      }
+    });
+  };
+  
+  // Atualiza os textos das features
     document.querySelectorAll('.feature h3').forEach((feature, index) => {
       const key = `feature${index + 1}_title`;
       if (translations[currentLanguage][key]) {
@@ -347,7 +397,7 @@ function initLanguageSystem() {
   // Inicializa
   updateLanguage();
   window.setLanguage = setLanguage;
-}
+
 
 // =============================================
 // Funções Auxiliares
