@@ -2,7 +2,7 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>v.graphiks - Design Gráfico & Motion Design</title>
   <meta name="description" content="Soluções visuais criativas: branding, motion design e design gráfico para destacar sua marca.">
   
@@ -14,7 +14,8 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pontano+Sans:wght@400;700&display=swap"></noscript>
   
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
@@ -22,6 +23,9 @@
   <!-- Preload CSS with print media query trick -->
   <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+  
+  <!-- Touch icon -->
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
   <header>
@@ -76,25 +80,25 @@
       
       <p data-translate="development_text">Na V.GRAPHIKS, combinamos criatividade, tecnologia e estratégia para criar experiências visuais excepcionais. Nosso processo é projetado para ser flexível, colaborativo e eficiente, garantindo que cada projeto atenda aos mais altos padrões.</p>
       <div class="process-features">
-    <div class="feature">
-        <div class="feature-icon">⚡</div>
-        <h3>Ágil & Adaptável</h3>
-        <p>Somos rápidos como um clique e flexíveis como um bom design! Ajustamo-nos ao teu feedback em tempo real 🕒, garantindo que cada detalhe reflete exatamente o que imaginaste (ou até melhor!).</p>
-    </div>
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3 data-translate="feature1_title">Ágil & Adaptável</h3>
+          <p data-translate="feature1_text">Somos rápidos como um clique e flexíveis como um bom design! Ajustamo-nos ao teu feedback em tempo real 🕒, garantindo que cada detalhe reflete exatamente o que imaginaste (ou até melhor!).</p>
+        </div>
 
-    <div class="feature">
-        <div class="feature-icon">💻</div>
-        <h3>Ferramentas Modernas</h3>
-        <p>Utilizamos as tecnologias mais recentes, desde inteligência artificial no processo criativo 🤖 até motion graphics cativantes 🌀, para levar o teu projeto a outro nível.</p>
-    </div>
+        <div class="feature">
+          <div class="feature-icon">💻</div>
+          <h3 data-translate="feature2_title">Ferramentas Modernas</h3>
+          <p data-translate="feature2_text">Utilizamos as tecnologias mais recentes, desde inteligência artificial no processo criativo 🤖 até motion graphics cativantes 🌀, para levar o teu projeto a outro nível.</p>
+        </div>
 
-    <div class="feature">
-        <div class="feature-icon">👀</div>
-        <h3>Colaboração Transparente</h3>
-        <p>Nada de surpresas! Estás presente em cada etapa do processo. Partilhamos ideias, esboços e versões contigo, para que o resultado final seja teu de verdade 💬✨.</p>
-    </div>
-</div>
-      
+        <div class="feature">
+          <div class="feature-icon">👀</div>
+          <h3 data-translate="feature3_title">Colaboração Transparente</h3>
+          <p data-translate="feature3_text">Nada de surpresas! Estás presente em cada etapa do processo. Partilhamos ideias, esboços e versões contigo, para que o resultado final seja teu de verdade 💬✨.</p>
+        </div>
+      </div>
+      </div>
     </div>
   </section>
   
@@ -143,39 +147,41 @@
   
   <section class="pricing" id="pricing">
     <h2 data-translate="pricing_title">Tabela de Preços</h2>
-    <table>
-      <tr>
-        <th data-translate="service_col">Serviço</th>
-        <th data-translate="description_col">Descrição</th>
-        <th data-translate="price_col">Preço</th>
-      </tr>
-      <tr>
-        <td data-translate="logo_design">Design de Logotipo</td>
-        <td>3 conceitos + 3 revisões + versões finais</td>
-        <td>€70+</td>
-      </tr>
-      <tr>
-        <td data-translate="visual_identity">Identidade Visual</td>
-        <td>Logotipo + cartão visita + papelaria básica</td>
-        <td>€180+</td>
-      </tr>
-      <tr>
-        <td data-translate="motion_design">Motion Design</td>
-        <td>Vídeo animado até 30 segundos</td>
-        <td>€120+</td>
-      </tr>
-      <tr>
-        <td data-translate="social_post">Post para Redes Sociais</td>
-        <td>Design para Instagram/Facebook/LinkedIn</td>
-        <td>€25/un</td>
-      </tr>
-      <tr>
-        <td data-translate="presentation">Apresentação</td>
-        <td>Template personalizado + 10 slides</td>
-        <td>€80+</td>
-      </tr>
-    </table>
-    <p style="margin-top: 20px;">* Preços podem variar conforme complexidade do projeto</p>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th data-translate="service_col">Serviço</th>
+          <th data-translate="description_col">Descrição</th>
+          <th data-translate="price_col">Preço</th>
+        </tr>
+        <tr>
+          <td data-translate="logo_design">Design de Logotipo</td>
+          <td>3 conceitos + 3 revisões + versões finais</td>
+          <td>€70+</td>
+        </tr>
+        <tr>
+          <td data-translate="visual_identity">Identidade Visual</td>
+          <td>Logotipo + cartão visita + papelaria básica</td>
+          <td>€180+</td>
+        </tr>
+        <tr>
+          <td data-translate="motion_design">Motion Design</td>
+          <td>Vídeo animado até 30 segundos</td>
+          <td>€120+</td>
+        </tr>
+        <tr>
+          <td data-translate="social_post">Post para Redes Sociais</td>
+          <td>Design para Instagram/Facebook/LinkedIn</td>
+          <td>€25/un</td>
+        </tr>
+        <tr>
+          <td data-translate="presentation">Apresentação</td>
+          <td>Template personalizado + 10 slides</td>
+          <td>€80+</td>
+        </tr>
+      </table>
+    </div>
+    <p class="price-note">* Preços podem variar conforme complexidade do projeto</p>
   </section>
 
   <section class="contact-section" id="contact">
