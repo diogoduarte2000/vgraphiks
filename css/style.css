@@ -117,6 +117,31 @@ p {
 }
 
 /* =============================================
+   Header Mobile Fix
+   ============================================= */
+@media (max-width: 768px) {
+  .header-background {
+    height: 60vh; /* Ajuste a altura para mobile */
+  }
+
+  .header-title {
+    top: 40%; /* Posicionamento vertical ajustado */
+    padding: 0 1.5rem; /* Mais espaço nas laterais */
+  }
+
+  .header-bg-image {
+    object-position: center center; /* Garante que a imagem fique centralizada */
+  }
+
+  /* Ajuste para o texto do header */
+  .header-title h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    word-break: break-word; /* Evita quebra de palavras estranhas */
+  }
+}
+
+/* =============================================
    Process Features
    ============================================= */
 .process-features {
@@ -832,3 +857,4 @@ footer p {
   border-width: 0;
 
 }
+
