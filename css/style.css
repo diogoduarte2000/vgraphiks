@@ -142,6 +142,40 @@ p {
 }
 
 /* =============================================
+   Header Simplificado
+   ============================================= */
+.header-background {
+  background-color: var(--secondary); /* Amarelo definido nas variáveis */
+  height: 40vh; /* Altura reduzida para mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.header-title h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 10vw, 4.5rem);
+  color: var(--bg-darker); /* Cor escura para contraste */
+  margin: 0;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Ajuste para mobile */
+@media (max-width: 768px) {
+  .header-background {
+    height: 30vh;
+  }
+  
+  .header-title h1 {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+}
+
+/* =============================================
    Process Features
    ============================================= */
 .process-features {
@@ -857,4 +891,5 @@ footer p {
   border-width: 0;
 
 }
+
 
