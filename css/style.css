@@ -85,6 +85,38 @@ p {
 }
 
 /* =============================================
+   Countdown Section
+   ============================================= */
+.countdown-section {
+  background-color: var(--bg-darker);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.countdown-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.digital-clock {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.countdown-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--secondary);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* =============================================
    Process Features
    ============================================= */
 .process-features {
@@ -798,4 +830,5 @@ footer p {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+
 }
