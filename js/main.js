@@ -31,27 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Atualiza o ano no footer
   document.getElementById('current-year').textContent = new Date().getFullYear();
-
-  initMobileMenu();
 });
-
-function initMobileMenu() {
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const navLinks = document.getElementById('nav-links');
-
-  if (mobileMenuBtn && navLinks) {
-    mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    // Fechar menu ao clicar em um link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
-  }
-}
 
 // =============================================
 // Módulo: Touch Events
@@ -76,19 +56,16 @@ function initStickyNav() {
   
   const updateNavbar = () => {
     const scrollPosition = window.pageYOffset;
-    const headerScrollRatio = Math.min(scrollPosition / headerHeight, 1);
     
-    if (scrollPosition > headerHeight) {
-      navbar.classList.add('fixed');
-      navbar.style.transform = 'translateY(0)';
-    } 
-    else if (scrollPosition > 0) {
-      navbar.classList.remove('fixed');
-      navbar.style.transform = `translateY(${-headerScrollRatio * 100}%)`;
-    }
-    else {
-      navbar.classList.remove('fixed');
-      navbar.style.transform = 'translateY(0)';
+    // Apenas aplica sticky em desktop
+    if (window.innerWidth > CONFIG.mobileBreakpoint) {
+      if (scrollPosition > headerHeight) {
+        navbar.classList.add('fixed');
+        navbar.style.transform = 'translateY(0)';
+      } else {
+        navbar.classList.remove('fixed');
+        navbar.style.transform = 'translateY(0)';
+      }
     }
   };
   
@@ -207,7 +184,7 @@ function initParallax() {
 }
 
 // =============================================
-// Módulo: Language Switcher (Corrigido)
+// Módulo: Language Switcher
 // =============================================
 function initLanguageSystem() {
   const translations = {
@@ -244,14 +221,23 @@ function initLanguageSystem() {
       
       // Preços
       "pricing_title": "Tabela de Preços",
+      "basic_plan": "Plano Básico",
+      "classic_plan": "Plano Clássico",
+      "premium_plan": "Plano Premium",
       "service_col": "Serviço",
-      "description_col": "Descrição",
-      "price_col": "Preço",
+      "price_col": "Preço (€)",
+      "revisions_col": "Revisões",
       "logo_design": "Design de Logotipo",
-      "visual_identity": "Identidade Visual",
-      "motion_design": "Motion Design",
-      "social_post": "Post para Redes Sociais",
-      "presentation": "Apresentação",
+      "poster_flyer": "Cartaz / Flyer",
+      "business_card": "Cartão de Visita",
+      "youtube_thumbnail": "Thumbnail YouTube",
+      "youtube_banner": "Banner YouTube",
+      "short_video": "Vídeo curto (até 30s)",
+      "medium_video": "Vídeo médio (30s-1min)",
+      "long_video": "Vídeo longo (1min-2min)",
+      "motion_design_short": "Motion Design (até 10s)",
+      "motion_design_medium": "Motion Design (até 30s)",
+      "price_note": "* Todos os preços são por trabalho e incluem o número de revisões indicadas. Entregas feitas em formatos adequados ao cliente (PNG, MP4, PDF, etc.).",
       
       // Contato
       "contact_title": "Contacte-nos",
@@ -270,31 +256,7 @@ function initLanguageSystem() {
       "feature2_text": "Utilizamos as tecnologias mais recentes, desde inteligência artificial no processo criativo 🤖 até motion graphics cativantes 🌀, para levar o teu projeto a outro nível.",
       
       "feature3_title": "Colaboração Transparente",
-      "feature3_text": "Nada de surpresas! Estás presente em cada etapa do processo. Partilhamos ideias, esboços e versões contigo, para que o resultado final seja teu de verdade 💬✨.",
-    
-      //pt translations object:
-
-      "pricing_title": "Tabela de Preços",
-
-      "basic_plan": "Plano Básico",
-      "classic_plan": "Plano Clássico",
-      "premium_plan": "Plano Premium",
-      "service_col": "Serviço",
-      "price_col": "Preço (€)",
-      "revisions_col": "Revisões",
-      "logo_design": "Design de Logotipo",
-      "poster_flyer": "Cartaz / Flyer",
-      "business_card": "Cartão de Visita",
-      "youtube_thumbnail": "Thumbnail YouTube",
-      "youtube_banner": "Banner YouTube",
-      "short_video": "Vídeo curto (até 30s)",
-      "medium_video": "Vídeo médio (30s-1min)",
-      "long_video": "Vídeo longo (1min-2min)",
-      "motion_design_short": "Motion Design (até 10s)",
-      "motion_design_medium": "Motion Design (até 30s)",
-      "price_note": "* Todos os preços são por trabalho e incluem o número de revisões indicadas. Entregas feitas em formatos adequados ao cliente (PNG, MP4, PDF, etc.).",
-          
-    
+      "feature3_text": "Nada de surpresas! Estás presente em cada etapa do processo. Partilhamos ideias, esboços e versões contigo, para que o resultado final seja teu de verdade 💬✨."
     },
     en: {
       // Navigation
@@ -329,39 +291,6 @@ function initLanguageSystem() {
       
       // Pricing
       "pricing_title": "Pricing Table",
-      "service_col": "Service",
-      "description_col": "Description",
-      "price_col": "Price",
-      "logo_design": "Logo Design",
-      "visual_identity": "Visual Identity",
-      "motion_design": "Motion Design",
-      "social_post": "Social Media Post",
-      "presentation": "Presentation",
-      
-      // Contact
-      "contact_title": "Contact Us",
-      "contact_text": "Have a project in mind? Contact us via email, WhatsApp or phone. We're available to discuss your needs and create visual solutions that will make your brand stand out in the market.",
-      "send_email": "Send Email",
-      "whatsapp": "WhatsApp",
-      
-      // Footer
-      "footer_text": "v.graphiks - All rights reserved",
-
-      // Development Process - Features
-      "feature1_title": "Ágil & Adaptável",
-      "feature1_text": "We're as fast as a click and as flexible as good design! We adjust to your feedback in real time 🕒, ensuring every detail reflects exactly what you imagined (or even better!).",
-      
-      "feature2_title": "Modern Tools",
-      "feature2_text": "We use the latest technologies, from artificial intelligence in the creative process 🤖 to captivating motion graphics 🌀, to take your project to the next level.",
-      
-      "feature3_title": "Transparent Collaboration",
-      "feature3_text": "No surprises! You're present at every stage of the process. We share ideas, sketches and versions with you, so the final result is truly yours 💬✨.",
-
-      //en translations object:
-
-      "pricing_title": "Pricing Table",
-
-
       "basic_plan": "Basic Plan",
       "classic_plan": "Classic Plan",
       "premium_plan": "Premium Plan",
@@ -379,9 +308,25 @@ function initLanguageSystem() {
       "motion_design_short": "Motion Design (up to 10s)",
       "motion_design_medium": "Motion Design (up to 30s)",
       "price_note": "* All prices are per job and include the indicated number of revisions. Deliveries made in formats suitable for the client (PNG, MP4, PDF, etc.).",
+      
+      // Contact
+      "contact_title": "Contact Us",
+      "contact_text": "Have a project in mind? Contact us via email, WhatsApp or phone. We're available to discuss your needs and create visual solutions that will make your brand stand out in the market.",
+      "send_email": "Send Email",
+      "whatsapp": "WhatsApp",
+      
+      // Footer
+      "footer_text": "v.graphiks - All rights reserved",
 
-
-
+      // Development Process - Features
+      "feature1_title": "Agile & Adaptable",
+      "feature1_text": "We're as fast as a click and as flexible as good design! We adjust to your feedback in real time 🕒, ensuring every detail reflects exactly what you imagined (or even better!).",
+      
+      "feature2_title": "Modern Tools",
+      "feature2_text": "We use the latest technologies, from artificial intelligence in the creative process 🤖 to captivating motion graphics 🌀, to take your project to the next level.",
+      
+      "feature3_title": "Transparent Collaboration",
+      "feature3_text": "No surprises! You're present at every stage of the process. We share ideas, sketches and versions with you, so the final result is truly yours 💬✨.",
     }
   };
 

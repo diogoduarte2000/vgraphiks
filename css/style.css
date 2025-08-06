@@ -40,95 +40,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-
-
-
-/* =============================================
-   Pricing Plans
-   ============================================= */
-.pricing-plans {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin: 3rem auto;
-  max-width: 1400px;
-}
-
-.pricing-plan {
-  flex: 1;
-  min-width: 300px;
-  max-width: 450px;
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--box-shadow);
-  transition: transform 0.3s ease;
-}
-
-.pricing-plan:hover {
-  transform: translateY(-10px);
-}
-
-.pricing-plan h3 {
-  padding: 1.5rem;
-  text-align: center;
-  margin-bottom: 0;
-  color: white;
-}
-
-.pricing-plan.basic h3 {
-  background-color: #ffd700; /* Yellow */
-  color: #333;
-}
-
-.pricing-plan.classic h3 {
-  background-color: #4a6bff; /* Blue */
-}
-
-.pricing-plan.premium h3 {
-  background-color: #ff4a4a; /* Red */
-}
-
-.pricing-plan table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.pricing-plan th {
-  padding: 1rem;
-  text-align: left;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: var(--text-dark);
-}
-
-.pricing-plan td {
-  padding: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.pricing-plan tr:last-child td {
-  border-bottom: none;
-}
-
-.price-note {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-@media (max-width: 768px) {
-  .pricing-plan {
-    min-width: 100%;
-  }
-}
-
-
-
-
-
-
 /* =============================================
    Typography
    ============================================= */
@@ -229,23 +140,63 @@ section {
 }
 
 /* =============================================
-   Header & Navigation - UPDATED
+   Header Background Effect - UPDATED
    ============================================= */
-header {
-  background-color: var(--bg-darker);
-  color: var(--primary);
-  padding: 12rem 1rem 10rem;
-  text-align: center;
+.header-background {
   position: relative;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
+.header-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: filter 0.5s ease;
+}
+
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.header-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.content-wrapper {
+  position: relative;
+  background: var(--bg-dark);
+  z-index: 10;
+}
+
+/* Efeito de blur quando faz scroll - INTENSIFICADO */
+body.scrolled .header-bg-image {
+  filter: blur(3px) brightness(0.7);
+}
+
+/* =============================================
+   Navbar - UPDATED (botões à direita)
+   ============================================= */
 .navbar {
   background-color: var(--bg-darker);
   padding: 1.5rem 0;
@@ -257,134 +208,19 @@ header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* Mobile Menu Button */
-.mobile-menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--text-dark);
-  font-size: 1.8rem;
-  cursor: pointer;
-  padding: 0.5rem;
-}
-
-/* Navbar Mobile Styles */
-@media (max-width: 768px) {
-  .nav-links {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: var(--bg-darker);
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 0;
-    gap: 0;
-    transform: translateY(-150%);
-    transition: transform 0.3s ease;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    transform: translateY(0);
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links a {
-    display: block;
-    padding: 1rem;
-    border-radius: 0;
-  }
-
-  .mobile-menu-btn {
-    display: block;
-  }
-
-  .language-buttons {
-    margin-left: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-links {
-    top: 60px;
-  }
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none; /* Oculta os links de navegação */
-  }
-
-  .mobile-menu-btn {
-    display: none; /* Oculta o botão do menu */
-  }
-
-  .nav-container {
-    justify-content: flex-end; /* Alinha os botões à direita */
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-
-.nav-links a {
-  color: var(--text-dark);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.75rem 1.25rem;
-  border-radius: var(--border-radius);
-  transition: all var(--transition);
-  font-size: 1.1rem;
-}
-
-.nav-links a:hover {
-  background-color: rgba(74, 107, 255, 0.2);
-  color: var(--primary);
-}
-
 .language-buttons {
   display: flex;
   gap: 0.75rem;
+  margin-left: auto;
 }
 
 .language-btn {
@@ -410,7 +246,7 @@ header {
 }
 
 /* =============================================
-   Sections - UPDATED
+   Sections
    ============================================= */
 .description {
   text-align: center;
@@ -817,18 +653,6 @@ footer p {
   .nav-container {
     flex-direction: column;
     align-items: flex-start;
-  }
-  
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .nav-links a {
-    padding: 0.5rem;
-    display: block;
   }
   
   .language-buttons {

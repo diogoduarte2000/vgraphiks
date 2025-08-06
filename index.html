@@ -6,6 +6,10 @@
   <title>v.graphiks - Design Gráfico & Motion Design</title>
   <meta name="description" content="Soluções visuais criativas: branding, motion design e design gráfico para destacar sua marca.">
   
+  <!-- Favicon -->
+  <link rel="icon" href="img/Logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="img/Logo.png">
+  
   <!-- Preload critical resources -->
   <link rel="preload" href="img/paint.png" as="image">
   <link rel="preconnect" href="https://cdn.pixabay.com">
@@ -23,31 +27,23 @@
   <!-- Preload CSS with print media query trick -->
   <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="css/style.css"></noscript>
-  
-  <!-- Touch icon -->
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
-  <header>
-    <h1>V.GRAPHIKS</h1>
-  </header>
+
+  <div class="header-background">
+    <img src="img/banner.png" alt="Background" class="header-bg-image">
+    <div class="header-overlay"></div>
+  </div>
+
   
   <nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#projects" data-translate="projects">Projetos</a></li>
-      <li><a href="#development" data-translate="development">Desenvolvimento</a></li>
-      <li><a href="#testimonials" data-translate="testimonials">Depoimentos</a></li>
-      <li><a href="#pricing" data-translate="pricing">Preços</a></li>
-      <li><a href="#contact" data-translate="contact">Contato</a></li>
-    </ul>
-    <div class="language-buttons">
-      <button class="language-btn active" id="pt-btn" onclick="setLanguage('pt')">PT</button>
-      <button class="language-btn" id="en-btn" onclick="setLanguage('en')">EN</button>
+    <div class="nav-container">
+      <div class="language-buttons">
+        <button class="language-btn active" id="pt-btn">PT</button>
+        <button class="language-btn" id="en-btn">EN</button>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
   
   <section class="description" id="description">
     <p data-translate="description_text">Na v.graphiks, criamos soluções visuais que combinam criatividade, funcionalidade e impacto. Do branding ao motion design, os nossos clientes confiam no nosso trabalho para dar vida às suas ideias e destacar as suas marcas.</p>
@@ -99,7 +95,6 @@
           <p data-translate="feature3_text">Nada de surpresas! Estás presente em cada etapa do processo. Partilhamos ideias, esboços e versões contigo, para que o resultado final seja teu de verdade 💬✨.</p>
         </div>
       </div>
-      </div>
     </div>
   </section>
   
@@ -116,7 +111,7 @@
            width="800"
            height="600">
       <div class="testimonial-content">
-        <p>"A v.graphiks superou as minhas expectativas! O branding que criaram para a nossa empresa foi simplesmente incrível e ajudou-nos a estabelecer uma identidade forte no mercado."</p>
+        <p data-translate="testimonial1_text">"A v.graphiks superou as minhas expectativas! O branding que criaram para a nossa empresa foi simplesmente incrível e ajudou-nos a estabelecer uma identidade forte no mercado."</p>
         <strong>— Joana Ferreira, Empreendedora</strong>
       </div>
     </div>
@@ -128,7 +123,7 @@
            width="800"
            height="600">
       <div class="testimonial-content">
-        <p>"Serviço muito profissional e rápido. A v.graphiks captou exatamente o que pretendíamos para os nossos vídeos promocionais, resultando num aumento de 30% no engajamento."</p>
+        <p data-translate="testimonial2_text">"Serviço muito profissional e rápido. A v.graphiks captou exatamente o que pretendíamos para os nossos vídeos promocionais, resultando num aumento de 30% no engajamento."</p>
         <strong>— Miguel Costa, Gerente de Marketing</strong>
       </div>
     </div>
@@ -140,179 +135,176 @@
            width="800"
            height="600">
       <div class="testimonial-content">
-        <p>"Fiquei impressionada com a atenção ao detalhe e a capacidade de traduzir ideias abstratas em designs concretos. Recomendo vivamente a v.graphiks para qualquer projeto de design."</p>
+        <p data-translate="testimonial3_text">"Fiquei impressionada com a atenção ao detalhe e a capacidade de traduzir ideias abstratas em designs concretos. Recomendo vivamente a v.graphiks para qualquer projeto de design."</p>
         <strong>— Carla Lopes, Designer Freelancer</strong>
       </div>
     </div>
   </section>
   
   <section class="pricing" id="pricing">
-  <h2 data-translate="pricing_title">Tabela de Preços</h2>
-  <div class="pricing-plans">
-    <!-- Basic Plan -->
-    <div class="pricing-plan basic">
-      <h3 data-translate="basic_plan">Plano Básico</h3>
-      <div class="table-container">
-        <table>
-          <tr>
-            <th data-translate="service_col">Serviço</th>
-            <th data-translate="price_col">Preço (€)</th>
-            <th data-translate="revisions_col">Revisões</th>
-          </tr>
-          <tr>
-            <td data-translate="logo_design">Design de Logotipo</td>
-            <td>20€</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td data-translate="poster_flyer">Cartaz / Flyer</td>
-            <td>25€</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td data-translate="business_card">Cartão de Visita</td>
-            <td>15€</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td data-translate="youtube_thumbnail">Thumbnail YouTube</td>
-            <td>10€</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td data-translate="youtube_banner">Banner YouTube</td>
-            <td>15€</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td data-translate="short_video">Vídeo curto (até 30s)</td>
-            <td>35€</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td data-translate="motion_design_short">Motion Design (até 10s)</td>
-            <td>30€</td>
-            <td>1</td>
-          </tr>
-        </table>
+    <h2 data-translate="pricing_title">Tabela de Preços</h2>
+    <div class="pricing-plans">
+      <div class="pricing-plan basic">
+        <h3 data-translate="basic_plan">Plano Básico</h3>
+        <div class="table-container">
+          <table>
+            <tr>
+              <th data-translate="service_col">Serviço</th>
+              <th data-translate="price_col">Preço (€)</th>
+              <th data-translate="revisions_col">Revisões</th>
+            </tr>
+            <tr>
+              <td data-translate="logo_design">Design de Logotipo</td>
+              <td>20€</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td data-translate="poster_flyer">Cartaz / Flyer</td>
+              <td>25€</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td data-translate="business_card">Cartão de Visita</td>
+              <td>15€</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td data-translate="youtube_thumbnail">Thumbnail YouTube</td>
+              <td>10€</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td data-translate="youtube_banner">Banner YouTube</td>
+              <td>15€</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td data-translate="short_video">Vídeo curto (até 30s)</td>
+              <td>35€</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td data-translate="motion_design_short">Motion Design (até 10s)</td>
+              <td>30€</td>
+              <td>1</td>
+            </tr>
+          </table>
+        </div>
       </div>
-    </div>
 
-    <!-- Classic Plan -->
-    <div class="pricing-plan classic">
-      <h3 data-translate="classic_plan">Plano Clássico</h3>
-      <div class="table-container">
-        <table>
-          <tr>
-            <th data-translate="service_col">Serviço</th>
-            <th data-translate="price_col">Preço (€)</th>
-            <th data-translate="revisions_col">Revisões</th>
-          </tr>
-          <tr>
-            <td data-translate="logo_design">Design de Logotipo</td>
-            <td>35€</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td data-translate="poster_flyer">Cartaz / Flyer</td>
-            <td>45€</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td data-translate="business_card">Cartão de Visita</td>
-            <td>25€</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td data-translate="youtube_thumbnail">Thumbnail YouTube</td>
-            <td>15€</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td data-translate="youtube_banner">Banner YouTube</td>
-            <td>25€</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td data-translate="short_video">Vídeo curto (até 30s)</td>
-            <td>50€</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td data-translate="motion_design_short">Motion Design (até 10s)</td>
-            <td>50€</td>
-            <td>2</td>
-          </tr>
-        </table>
+      <div class="pricing-plan classic">
+        <h3 data-translate="classic_plan">Plano Clássico</h3>
+        <div class="table-container">
+          <table>
+            <tr>
+              <th data-translate="service_col">Serviço</th>
+              <th data-translate="price_col">Preço (€)</th>
+              <th data-translate="revisions_col">Revisões</th>
+            </tr>
+            <tr>
+              <td data-translate="logo_design">Design de Logotipo</td>
+              <td>35€</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td data-translate="poster_flyer">Cartaz / Flyer</td>
+              <td>45€</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td data-translate="business_card">Cartão de Visita</td>
+              <td>25€</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td data-translate="youtube_thumbnail">Thumbnail YouTube</td>
+              <td>15€</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td data-translate="youtube_banner">Banner YouTube</td>
+              <td>25€</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td data-translate="short_video">Vídeo curto (até 30s)</td>
+              <td>50€</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td data-translate="motion_design_short">Motion Design (até 10s)</td>
+              <td>50€</td>
+              <td>2</td>
+            </tr>
+          </table>
+        </div>
       </div>
-    </div>
 
-    <!-- Premium Plan -->
-    <div class="pricing-plan premium">
-      <h3 data-translate="premium_plan">Plano Premium</h3>
-      <div class="table-container">
-        <table>
-          <tr>
-            <th data-translate="service_col">Serviço</th>
-            <th data-translate="price_col">Preço (€)</th>
-            <th data-translate="revisions_col">Revisões</th>
-          </tr>
-          <tr>
-            <td data-translate="logo_design">Design de Logotipo</td>
-            <td>60€</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td data-translate="poster_flyer">Cartaz / Flyer</td>
-            <td>70€</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td data-translate="business_card">Cartão de Visita</td>
-            <td>40€</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td data-translate="youtube_thumbnail">Thumbnail YouTube</td>
-            <td>25€</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td data-translate="youtube_banner">Banner YouTube</td>
-            <td>35€</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td data-translate="short_video">Vídeo curto (até 30s)</td>
-            <td>75€</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td data-translate="medium_video">Vídeo médio (30s-1min)</td>
-            <td>100€</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td data-translate="long_video">Vídeo longo (1min-2min)</td>
-            <td>140€</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td data-translate="motion_design_short">Motion Design (até 10s)</td>
-            <td>70€</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td data-translate="motion_design_medium">Motion Design (até 30s)</td>
-            <td>100€</td>
-            <td>3</td>
-          </tr>
-        </table>
+      <div class="pricing-plan premium">
+        <h3 data-translate="premium_plan">Plano Premium</h3>
+        <div class="table-container">
+          <table>
+            <tr>
+              <th data-translate="service_col">Serviço</th>
+              <th data-translate="price_col">Preço (€)</th>
+              <th data-translate="revisions_col">Revisões</th>
+            </tr>
+            <tr>
+              <td data-translate="logo_design">Design de Logotipo</td>
+              <td>60€</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td data-translate="poster_flyer">Cartaz / Flyer</td>
+              <td>70€</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td data-translate="business_card">Cartão de Visita</td>
+              <td>40€</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td data-translate="youtube_thumbnail">Thumbnail YouTube</td>
+              <td>25€</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td data-translate="youtube_banner">Banner YouTube</td>
+              <td>35€</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td data-translate="short_video">Vídeo curto (até 30s)</td>
+              <td>75€</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td data-translate="medium_video">Vídeo médio (30s-1min)</td>
+              <td>100€</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td data-translate="long_video">Vídeo longo (1min-2min)</td>
+              <td>140€</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td data-translate="motion_design_short">Motion Design (até 10s)</td>
+              <td>70€</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td data-translate="motion_design_medium">Motion Design (até 30s)</td>
+              <td>100€</td>
+              <td>3</td>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-  <p class="price-note" data-translate="price_note">* Todos os preços são por trabalho e incluem o número de revisões indicadas. Entregas feitas em formatos adequados ao cliente (PNG, MP4, PDF, etc.).</p>
-</section>
+    <p class="price-note" data-translate="price_note">* Todos os preços são por trabalho e incluem o número de revisões indicadas. Entregas feitas em formatos adequados ao cliente (PNG, MP4, PDF, etc.).</p>
+  </section>
 
   <section class="contact-section" id="contact">
     <div class="contact-container">
@@ -327,9 +319,9 @@
         </div>
       </div>
       <div class="contact-options">
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=v.graphikscorp@gmail.com" 
-           target="_blank" 
-           class="contact-btn" data-translate="send_email">Enviar Email</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=v.graphikscorp@gmail.com&su=Orçamento%20|%20Serviços%20de%20Design%20v.graphiks&body=Olá%20equipa%20v.graphiks,%0D%0A%0D%0AEstou%20interessado(a)%20nos%20vossos%20serviços%20e%20gostaria%20de%20solicitar:%0D%0A%0D%0A🔹%20Serviço%20desejado:%20[Branding/Motion%20Design/Design%20Gráfico/Apresentações]%0D%0A🔹%20Descrição%20do%20projeto:%20[Breve%20descrição]%0D%0A🔹%20Prazo%20estimado:%20[Se%20aplicável]%0D%0A🔹%20Outras%20informações%20relevantes:%0D%0A%0D%0APor%20favor,%20envie-me%20mais%20detalhes%20sobre:%0D%0A-%20Processo%20de%20trabalho%0D%0A-%20Prazos%20de%20entrega%0D%0A-%20Preços%20e%20formas%20de%20pagamento%0D%0A%0D%0AAgradeço%20desde%20já%20a%20vossa%20atenção.%0D%0A%0D%0AMelhores%20cumprimentos,%0D%0A[Seu%20Nome]%0D%0A[Seu%20Contacto]" 
+   target="_blank" 
+   class="contact-btn" data-translate="send_email">Enviar Email</a>
         
         <a href="https://wa.me/351933402201" 
            target="_blank" 
