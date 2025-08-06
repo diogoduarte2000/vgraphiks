@@ -462,4 +462,29 @@ function detectMobile() {
       clearTimeout(id);
     };
   }
+
 })();
+
+// Adicione esta tradução ao objeto translations
+translations.pt.countdown_text = "Porque perder mais tempo? Entre em contacto conosco para levar a sua empresa ao próximo nível";
+translations.en.countdown_text = "Why waste more time? Contact us to take your business to the next level";
+
+// Adicione esta função no final do main.js (antes dos polyfills)
+function initClock() {
+  function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    document.getElementById('digital-clock').textContent = `${hours}:${minutes}:${seconds}`;
+  }
+  
+  updateClock();
+  setInterval(updateClock, 1000);
+}
+
+// Adicione esta chamada na função DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+  // ... outras inicializações
+  initClock();
+});
