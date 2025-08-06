@@ -270,7 +270,31 @@ function initLanguageSystem() {
       "feature2_text": "Utilizamos as tecnologias mais recentes, desde inteligência artificial no processo criativo 🤖 até motion graphics cativantes 🌀, para levar o teu projeto a outro nível.",
       
       "feature3_title": "Colaboração Transparente",
-      "feature3_text": "Nada de surpresas! Estás presente em cada etapa do processo. Partilhamos ideias, esboços e versões contigo, para que o resultado final seja teu de verdade 💬✨."
+      "feature3_text": "Nada de surpresas! Estás presente em cada etapa do processo. Partilhamos ideias, esboços e versões contigo, para que o resultado final seja teu de verdade 💬✨.",
+    
+      //pt translations object:
+
+      "pricing_title": "Tabela de Preços",
+
+      "basic_plan": "Plano Básico",
+      "classic_plan": "Plano Clássico",
+      "premium_plan": "Plano Premium",
+      "service_col": "Serviço",
+      "price_col": "Preço (€)",
+      "revisions_col": "Revisões",
+      "logo_design": "Design de Logotipo",
+      "poster_flyer": "Cartaz / Flyer",
+      "business_card": "Cartão de Visita",
+      "youtube_thumbnail": "Thumbnail YouTube",
+      "youtube_banner": "Banner YouTube",
+      "short_video": "Vídeo curto (até 30s)",
+      "medium_video": "Vídeo médio (30s-1min)",
+      "long_video": "Vídeo longo (1min-2min)",
+      "motion_design_short": "Motion Design (até 10s)",
+      "motion_design_medium": "Motion Design (até 30s)",
+      "price_note": "* Todos os preços são por trabalho e incluem o número de revisões indicadas. Entregas feitas em formatos adequados ao cliente (PNG, MP4, PDF, etc.).",
+          
+    
     },
     en: {
       // Navigation
@@ -332,6 +356,31 @@ function initLanguageSystem() {
       
       "feature3_title": "Transparent Collaboration",
       "feature3_text": "No surprises! You're present at every stage of the process. We share ideas, sketches and versions with you, so the final result is truly yours 💬✨.",
+
+      //en translations object:
+
+      "pricing_title": "Pricing Table",
+
+
+      "basic_plan": "Basic Plan",
+      "classic_plan": "Classic Plan",
+      "premium_plan": "Premium Plan",
+      "service_col": "Service",
+      "price_col": "Price (€)",
+      "revisions_col": "Revisions",
+      "logo_design": "Logo Design",
+      "poster_flyer": "Poster / Flyer",
+      "business_card": "Business Card",
+      "youtube_thumbnail": "YouTube Thumbnail",
+      "youtube_banner": "YouTube Banner",
+      "short_video": "Short Video (up to 30s)",
+      "medium_video": "Medium Video (30s-1min)",
+      "long_video": "Long Video (1min-2min)",
+      "motion_design_short": "Motion Design (up to 10s)",
+      "motion_design_medium": "Motion Design (up to 30s)",
+      "price_note": "* All prices are per job and include the indicated number of revisions. Deliveries made in formats suitable for the client (PNG, MP4, PDF, etc.).",
+
+
 
     }
   };

@@ -40,6 +40,95 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+
+
+
+/* =============================================
+   Pricing Plans
+   ============================================= */
+.pricing-plans {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 3rem auto;
+  max-width: 1400px;
+}
+
+.pricing-plan {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+}
+
+.pricing-plan:hover {
+  transform: translateY(-10px);
+}
+
+.pricing-plan h3 {
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 0;
+  color: white;
+}
+
+.pricing-plan.basic h3 {
+  background-color: #ffd700; /* Yellow */
+  color: #333;
+}
+
+.pricing-plan.classic h3 {
+  background-color: #4a6bff; /* Blue */
+}
+
+.pricing-plan.premium h3 {
+  background-color: #ff4a4a; /* Red */
+}
+
+.pricing-plan table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pricing-plan th {
+  padding: 1rem;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-dark);
+}
+
+.pricing-plan td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pricing-plan tr:last-child td {
+  border-bottom: none;
+}
+
+.price-note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  .pricing-plan {
+    min-width: 100%;
+  }
+}
+
+
+
+
+
+
 /* =============================================
    Typography
    ============================================= */
