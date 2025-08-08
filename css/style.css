@@ -132,10 +132,11 @@ p {
 }
 
 /* Ajuste específico para mobile */
-@media (max-width: 768px) {
-  .header-background {
-    height: 20vh; /* Mais compacto em mobile */
-    min-height: 150px; /* Altura mínima menor */
+@media (max-width: 1024px) {
+  header {
+    padding: 10rem 1rem 8rem;
+    min-height: 50vh;
+    margin-bottom: 6rem;
   }
 }
 
@@ -907,6 +908,7 @@ footer p {
   border-width: 0;
 
 }
+
 
 
 
